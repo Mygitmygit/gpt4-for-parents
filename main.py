@@ -10,7 +10,7 @@ import streamlit as st
 def gen(x):
   gpt_prompt =[{"role": "system","content": "Answer in korean."}]
   gpt_prompt.append({"role":"user","content": x})
-  gpt_response = openai.ChatCompletion.create(model="gpt-4-1106-preview",messages=gpt_prompt,temperature=0.5)
+  gpt_response = openai.ChatCompletion.create(model="gpt-4",messages=gpt_prompt,temperature=0.5)
   return gpt_response["choices"][0]["message"]["content"]
 
 
